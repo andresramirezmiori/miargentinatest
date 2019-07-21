@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Mi Argentina</title>
+    </head>
+    <body>
+      <div>
+        <table>
+          <tr>
+            <th>Tipo Documento</th>
+            <td>{{usuario.get_tipo_documento_display}}</td>
+          </tr>
+          <tr>
+            <th>Numero Documento</th>
+            <td>{{usuario.numero_documento}}</td>
+          </tr>
+          <tr>
+            <th>Apelido</th>
+            <td>{{usuario.apellido}}</td>
+          </tr>
+          <tr>
+            <th>Nombre</th>
+            <td>{{usuario.nombre}}</td>
+          </tr>
+          <tr>
+            <th>Sexo</th>
+            <td>{{usuario.get_sexo_display}}</td>
+          </tr>
+          <tr>
+            <th>Fecha Nacimiento</th>
+            <td>{{usuario.fecha_nacimiento}}</td>
+          </tr>
+          <tr>
+            <th>Correo Electrónico</th>
+            <td>{{usuario.email}}</td>
+          </tr>
+          <tr>
+            <th>Nivel Validación</th>
+            <td>{{usuario.validation_level}}</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <a class="btn btn-primary" href="{% url 'user_create' %}">Nuevo</a>
+              <a class="btn btn-primary" href="{% url 'user_update' pk=usuario.pk %}">Editar</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </body>
+</html>

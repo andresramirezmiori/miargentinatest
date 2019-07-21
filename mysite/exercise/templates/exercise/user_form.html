@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Mi Argentina</title>
+    </head>
+    <body>
+      <div>
+          <form method="POST">
+              {% csrf_token %}
+              <table>
+                {{ form.as_table }}
+                {% if form.instance.pk %}
+                <tr>
+                  <th>
+                    Nivel de validación:
+                  </th>
+                  <td>
+                    {{ form.instance.validation_level}}
+                  </td>
+                </tr>
+                {% endif %}
+              </table>
+
+                {% if form.instance.pk %}
+                <input type="submit" class="btn btn-success" value="Guardar cambios">
+                {% else %}
+                <input type="submit" class="btn btn-success" value="Crear">
+                {% endif %}
+
+          </form>
+      </div>
+    </body>
+</html>
